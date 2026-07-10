@@ -113,6 +113,17 @@ function sectionVideos() {
   run('trailer-poster.jpg', ['-y', '-ss', '14', '-i', TRAILER, '-frames:v', '1', '-vf', 'scale=-2:720', '-q:v', '3', o('trailer-poster.jpg')]);
 }
 
+const STRIPPARI = s('Video 31.5.2026, 16 15 17.mp4');
+
+// Strippari music video — full, 720p, WITH audio, click-to-play.
+function strippari() {
+  console.log('Strippari:');
+  run('strippari.mp4', ['-y', '-i', STRIPPARI, '-vf', 'scale=-2:720', '-c:v', 'libx264', '-profile:v', 'high',
+    '-pix_fmt', 'yuv420p', '-crf', '28', '-preset', 'fast', '-c:a', 'aac', '-b:a', '128k',
+    '-movflags', '+faststart', o('strippari.mp4')]);
+  run('strippari-poster.jpg', ['-y', '-ss', '25', '-i', STRIPPARI, '-frames:v', '1', '-vf', 'scale=-2:720', '-q:v', '3', o('strippari-poster.jpg')]);
+}
+
 // Syrpa clips for the Myndbönd section.
 function syrpa() {
   console.log('Syrpa:');
@@ -124,10 +135,11 @@ function syrpa() {
   run('syrpa-studio-poster.jpg', ['-y', '-ss', '74', '-i', TRAILER, '-frames:v', '1', '-vf', 'scale=-2:720', '-q:v', '3', o('syrpa-studio-poster.jpg')]);
 }
 
-function videos() { console.log('Videos:'); heroLoop(); sectionVideos(); syrpa(); }
+function videos() { console.log('Videos:'); heroLoop(); sectionVideos(); syrpa(); strippari(); }
 
 if (mode === 'images' || mode === 'all') await images();
 if (mode === 'hero') heroLoop();
 if (mode === 'syrpa') syrpa();
+if (mode === 'strippari') strippari();
 if (mode === 'videos' || mode === 'all') videos();
 console.log('Done:', mode);
