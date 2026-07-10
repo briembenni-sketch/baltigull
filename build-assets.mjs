@@ -113,9 +113,21 @@ function sectionVideos() {
   run('trailer-poster.jpg', ['-y', '-ss', '14', '-i', TRAILER, '-frames:v', '1', '-vf', 'scale=-2:720', '-q:v', '3', o('trailer-poster.jpg')]);
 }
 
-function videos() { console.log('Videos:'); heroLoop(); sectionVideos(); }
+// Syrpa clips for the Myndbönd section.
+function syrpa() {
+  console.log('Syrpa:');
+  // Studio/behind-the-scenes montage from the trailer (neon studio, guitar, ends on the
+  // gold Breytingar logo card). WITH audio, click-to-play.
+  run('syrpa-studio.mp4', ['-y', '-ss', '52', '-t', '50', '-i', TRAILER, '-vf', 'scale=-2:720',
+    '-c:v', 'libx264', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-crf', '27', '-preset', 'fast',
+    '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', o('syrpa-studio.mp4')]);
+  run('syrpa-studio-poster.jpg', ['-y', '-ss', '74', '-i', TRAILER, '-frames:v', '1', '-vf', 'scale=-2:720', '-q:v', '3', o('syrpa-studio-poster.jpg')]);
+}
+
+function videos() { console.log('Videos:'); heroLoop(); sectionVideos(); syrpa(); }
 
 if (mode === 'images' || mode === 'all') await images();
 if (mode === 'hero') heroLoop();
+if (mode === 'syrpa') syrpa();
 if (mode === 'videos' || mode === 'all') videos();
 console.log('Done:', mode);

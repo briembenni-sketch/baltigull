@@ -247,6 +247,75 @@ p{margin:0}
 .single:hover .single__go{background:var(--ink);border-color:var(--ink);color:#fff}
 .single__go svg{width:17px;height:17px}
 
+/* ---------- MYNDBÖND (syrpa) ---------- */
+#myndbond{background:var(--ink);color:#fff}
+#myndbond .eyebrow{color:rgba(255,255,255,.6)}
+#myndbond .shead h2{color:#fff}
+#myndbond .shead>p{color:rgba(255,255,255,.55)}
+.reel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,26px)}
+.vid{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:#000;box-shadow:0 24px 60px -28px rgba(0,0,0,.9);aspect-ratio:16/9;border:none;padding:0;cursor:pointer;width:100%}
+.vid--main{grid-column:1/-1}
+.vid img.poster{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.vid:hover img.poster{transform:scale(1.04)}
+.vid video{width:100%;height:100%;object-fit:cover}
+.vid__overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(16px,2.5vw,28px);background:linear-gradient(to top,rgba(0,0,0,.72),transparent 55%);pointer-events:none;text-align:left}
+.vid__play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(58px,7vw,80px);height:clamp(58px,7vw,80px);border-radius:50%;background:var(--rainbow);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 40px -8px rgba(0,0,0,.7);transition:transform .25s}
+.vid__play svg{width:38%;height:38%;color:#fff;margin-left:6%}
+.vid:hover .vid__play{transform:translate(-50%,-50%) scale(1.08)}
+.vid__label{color:#fff;position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
+.vid__label .k{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;opacity:.8;font-weight:700}
+.vid__label .t{font-family:var(--font-display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.9rem);letter-spacing:-.01em}
+.vid__dur{position:absolute;top:14px;right:14px;z-index:1;font-size:.72rem;font-weight:700;letter-spacing:.06em;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:#fff;padding:5px 10px;border-radius:999px;font-variant-numeric:tabular-nums;pointer-events:none}
+
+/* ---------- BÓKA GIGG (form) ---------- */
+#boka{position:relative;isolation:isolate;overflow:hidden}
+#boka::before,#boka::after{content:"";position:absolute;z-index:-1;width:min(76vw,660px);aspect-ratio:1;border-radius:50%;opacity:.82;pointer-events:none}
+#boka::before{top:-12%;right:-12%;background:radial-gradient(circle,rgba(164,75,240,.5),transparent 66%)}
+#boka::after{bottom:-14%;left:-12%;background:radial-gradient(circle,rgba(255,196,0,.46),transparent 66%)}
+.booking{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(22px,3.5vw,42px);align-items:stretch}
+.booking__info{position:relative;background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:clamp(24px,3.4vw,40px);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-lg)}
+.booking__info::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--rainbow)}
+.booking__info h3{font-size:clamp(1.5rem,2.8vw,2.1rem);color:#fff;letter-spacing:-.02em}
+.booking__info>p{color:rgba(255,255,255,.65);margin-top:14px;max-width:36ch}
+.booking__list{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:13px}
+.booking__list li{display:flex;align-items:center;gap:12px;font-weight:500;font-size:.95rem}
+.booking__list li i{width:9px;height:9px;border-radius:50%;flex-shrink:0;display:inline-block}
+.booking__mail{margin-top:auto;padding-top:28px;display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-family:var(--font-display);font-size:clamp(.98rem,1.6vw,1.15rem);transition:gap .3s;word-break:break-all}
+.booking__mail:hover{gap:15px}
+.booking__mail .ar{width:30px;height:30px;border-radius:50%;background:var(--rainbow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.booking__mail .ar svg{width:15px;height:15px;color:#fff}
+/* form card */
+.bform{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:clamp(22px,3.2vw,36px);position:relative}
+.bform::after{content:"";position:absolute;left:18px;right:18px;bottom:-1px;height:3px;border-radius:3px;background:var(--rainbow)}
+.bform__grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field--full{grid-column:1/-1}
+.field label{font-weight:600;font-size:.88rem}
+.field label .req{color:#d92d20}
+.field input,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;min-height:50px;width:100%;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.field textarea{min-height:122px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--c-blue);box-shadow:0 0 0 3px rgba(58,99,240,.16)}
+.field.error input,.field.error textarea{border-color:#e5484d;box-shadow:0 0 0 3px rgba(229,72,77,.12)}
+.field .err{display:none;font-size:.8rem;color:#d92d20;font-weight:500}
+.field.error .err{display:block}
+.field .hint{font-size:.78rem;color:var(--ink-soft)}
+.bform__actions{margin-top:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.bform__note{font-size:.8rem;color:var(--ink-soft);max-width:30ch}
+.btn .spinner{display:none;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+.btn.loading .spinner{display:inline-block}
+.btn.loading{pointer-events:none;opacity:.85}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bform__fail{display:none;margin-top:18px;padding:14px 16px;border-radius:12px;background:#fef3f2;border:1px solid #fecdca;color:#b42318;font-size:.9rem;line-height:1.5}
+.bform__fail.show{display:block}
+.bform__fail a{font-weight:700;text-decoration:underline}
+.bform__ok{display:none;text-align:center;padding:clamp(26px,4.5vw,54px) 10px}
+.bform.sent .bform__ok{display:block}
+.bform.sent .bform__body{display:none}
+.bform__ok .check{width:74px;height:74px;border-radius:50%;background:var(--rainbow);display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:var(--shadow)}
+.bform__ok .check svg{width:34px;height:34px;color:#fff}
+.bform__ok h3{font-size:clamp(1.5rem,3vw,2rem)}
+.bform__ok p{color:var(--ink-2);margin-top:10px}
+
 /* ---------- CONTACT / FOOTER ---------- */
 #hafa-samband{background:var(--ink);color:#fff}
 #hafa-samband .eyebrow{color:rgba(255,255,255,.6)}
@@ -288,6 +357,11 @@ p{margin:0}
   .contact{grid-template-columns:1fr}
   .music{grid-template-columns:1fr}
   .music__b{order:-1}
+  .reel{grid-template-columns:1fr}
+  .booking{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .bform__grid{grid-template-columns:1fr}
 }
 @media (max-width:760px){
   .nav__links{position:fixed;inset:68px 12px auto;flex-direction:column;align-items:stretch;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow-lg);transform:translateY(-12px) scale(.98);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
@@ -323,7 +397,7 @@ p{margin:0}
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.59 14.43a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.8-.87 7.07-.5 9.71 1.11a.62.62 0 01.22.86zm1.22-2.72a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.49c3.64-1.1 8.16-.56 11.24 1.33.37.22.49.7.25 1.07zm.1-2.83C14.78 8.2 9.5 8.01 6.45 8.94a.93.93 0 11-.54-1.79c3.5-1.06 9.33-.85 12.99 1.32a.94.94 0 01-.96 1.61z"/></svg>
         <span>Hlusta</span>
       </a>
-      <a class="nav__btn nav__btn--book" href="#hafa-samband">Bóka&nbsp;gigg</a>
+      <a class="nav__btn nav__btn--book" href="#boka">Bóka&nbsp;gigg</a>
     </div>
   </div>
 </header>
@@ -442,6 +516,116 @@ p{margin:0}
 </section>
 
 
+<!-- ================= MYNDBÖND (syrpa) ================= -->
+<section class="section" id="myndbond">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <p class="eyebrow reveal">Myndbönd</p>
+        <h2 class="reveal" data-d="1">Syrpan</h2>
+      </div>
+      <p class="reveal" data-d="1">Tónlistarmyndband, stúdíó og brot á bak við tjöldin. Smelltu til að spila með hljóði.</p>
+    </div>
+    <div class="reel">
+      <button class="vid vid--main reveal" data-src="assets/loford.mp4" aria-label="Spila tónlistarmyndbandið Loforð">
+        <img class="poster" src="assets/loford-poster.jpg" width="1280" height="720" loading="lazy" alt="Stilla úr tónlistarmyndbandinu Loforð, BaltiGull í leðurjakka við klettavegg." />
+        <span class="vid__dur" aria-hidden="true">2:53</span>
+        <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vid__overlay"><span class="vid__label"><span class="k">Tónlistarmyndband</span><span class="t" translate="no">Loforð</span></span></span>
+      </button>
+      <button class="vid reveal" data-d="1" data-src="assets/syrpa-studio.mp4" aria-label="Spila highlights úr stúdíóinu">
+        <img class="poster" src="assets/syrpa-studio-poster.jpg" width="1280" height="720" loading="lazy" alt="BaltiGull spilar á gítar í hljóðveri." />
+        <span class="vid__dur" aria-hidden="true">0:50</span>
+        <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vid__overlay"><span class="vid__label"><span class="k">Highlights</span><span class="t">Í stúdíóinu</span></span></span>
+      </button>
+      <button class="vid reveal" data-d="2" data-src="assets/trailer.mp4" aria-label="Spila kynningarmyndband BaltiGull">
+        <img class="poster" src="assets/trailer-poster.jpg" width="1280" height="720" loading="lazy" alt="Stilla úr kynningarmyndbandi BaltiGull." />
+        <span class="vid__dur" aria-hidden="true">0:40</span>
+        <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vid__overlay"><span class="vid__label"><span class="k">Kynning</span><span class="t">Á bak við tjöldin</span></span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BÓKA GIGG ================= -->
+<section class="section" id="boka">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <p class="eyebrow reveal">Bóka gigg</p>
+        <h2 class="reveal" data-d="1">Bókaðu BaltiGull</h2>
+      </div>
+      <p class="reveal" data-d="1">Fylltu út formið og fyrirspurnin fer beint í pósthólfið okkar.</p>
+    </div>
+    <div class="booking">
+      <aside class="booking__info reveal">
+        <h3>Tónleikar, einkasamkvæmi eða viðburður?</h3>
+        <p>Segðu okkur frá viðburðinum, hvar og hvenær, og við svörum eins fljótt og við getum.</p>
+        <ul class="booking__list">
+          <li><i style="background:var(--c-pink)" aria-hidden="true"></i>Tónleikar &amp; hátíðir</li>
+          <li><i style="background:var(--c-cyan)" aria-hidden="true"></i>Einkasamkvæmi &amp; árshátíðir</li>
+          <li><i style="background:var(--c-amber)" aria-hidden="true"></i>Fjölmiðlar &amp; samstarf</li>
+        </ul>
+        <a class="booking__mail" href="mailto:baltigullsmari@gmail.com">
+          <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          baltigullsmari@gmail.com
+        </a>
+      </aside>
+
+      <form class="bform reveal" data-d="1" id="bookform" novalidate>
+        <div class="bform__body">
+          <div class="bform__grid">
+            <div class="field">
+              <label for="bf-name">Nafn <span class="req" aria-hidden="true">*</span></label>
+              <input id="bf-name" name="name" type="text" autocomplete="name" required />
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="bf-phone">Símanúmer <span class="req" aria-hidden="true">*</span></label>
+              <input id="bf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="bf-email">Netfang <span class="req" aria-hidden="true">*</span></label>
+              <input id="bf-email" name="email" type="email" autocomplete="email" required />
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="bf-date">Dagsetning viðburðar <span class="req" aria-hidden="true">*</span></label>
+              <input id="bf-date" name="date" type="date" required />
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field field--full">
+              <label for="bf-msg">Athugasemd</label>
+              <textarea id="bf-msg" name="message" rows="4"></textarea>
+              <span class="hint">T.d. staðsetning, tilefni og fjöldi gesta.</span>
+              <span class="err" role="alert"></span>
+            </div>
+          </div>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+          <div class="bform__actions">
+            <button class="btn btn--rainbow" type="submit" id="bsubmit">
+              <span class="spinner" aria-hidden="true"></span>
+              <span class="btntxt">Senda fyrirspurn</span>
+            </button>
+            <span class="bform__note">Fyrirspurnin fer á baltigullsmari@gmail.com</span>
+          </div>
+          <div class="bform__fail" id="bfail" role="alert">
+            Ekki tókst að senda fyrirspurnina. Prófaðu aftur, eða <a id="bmailto" href="mailto:baltigullsmari@gmail.com">sendu okkur beint tölvupóst</a>.
+          </div>
+        </div>
+        <div class="bform__ok" role="status" tabindex="-1" id="bok">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Takk fyrir!</h3>
+          <p>Fyrirspurnin er komin til okkar. Við svörum þér eins fljótt og við getum.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- ================= HAFA SAMBAND ================= -->
 <section class="section" id="hafa-samband">
   <div class="wrap">
@@ -526,6 +710,98 @@ p{margin:0}
   /* ---------- Hero video: respect reduced motion ---------- */
   var hero=document.getElementById("herovid");
   if(hero && reduce){ hero.removeAttribute("autoplay"); hero.removeAttribute("loop"); try{hero.pause();}catch(e){} }
+
+  /* ---------- Syrpa: click-to-play videos ---------- */
+  document.querySelectorAll(".vid").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      if(btn.dataset.playing) return;
+      btn.dataset.playing="1";
+      var v=document.createElement("video");
+      v.src=btn.dataset.src; v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute("playsinline","");
+      v.style.width="100%"; v.style.height="100%"; v.style.objectFit="cover";
+      btn.querySelectorAll(".poster,.vid__play,.vid__overlay,.vid__dur").forEach(function(el){el.remove();});
+      btn.appendChild(v);
+    });
+  });
+
+  /* ---------- Bóka gigg: form ---------- */
+  var bform=document.getElementById("bookform");
+  if(bform){
+    var BOOK_TO="baltigullsmari@gmail.com";
+    var dateEl=document.getElementById("bf-date");
+    if(dateEl){ dateEl.min=new Date().toISOString().split("T")[0]; }
+
+    function setErr(el,msg){
+      var f=el.closest(".field");
+      f.classList.toggle("error",!!msg);
+      f.querySelector(".err").textContent=msg||"";
+      el.setAttribute("aria-invalid", msg?"true":"false");
+    }
+    function check(el){
+      var v=el.value.trim();
+      if(el.required && !v) return "Þessi reitur er nauðsynlegur.";
+      if(el.type==="email" && v && !/^\S+@\S+\.\S+$/.test(v)) return "Sláðu inn gilt netfang.";
+      if(el.type==="tel" && v && !/^[\d\s+\-()]{7,}$/.test(v)) return "Sláðu inn gilt símanúmer.";
+      return "";
+    }
+    var inputs=bform.querySelectorAll(".field input,.field textarea");
+    inputs.forEach(function(el){
+      el.addEventListener("blur",function(){ setErr(el,check(el)); });
+      el.addEventListener("input",function(){
+        if(el.closest(".field").classList.contains("error")) setErr(el,check(el));
+      });
+    });
+
+    bform.addEventListener("submit",function(e){
+      e.preventDefault();
+      var firstBad=null;
+      inputs.forEach(function(el){
+        var m=check(el); setErr(el,m);
+        if(m && !firstBad) firstBad=el;
+      });
+      if(firstBad){ firstBad.focus(); return; }
+
+      var btn=document.getElementById("bsubmit"), fail=document.getElementById("bfail");
+      fail.classList.remove("show");
+      btn.classList.add("loading"); btn.disabled=true;
+
+      var data={
+        "Nafn": document.getElementById("bf-name").value.trim(),
+        "Símanúmer": document.getElementById("bf-phone").value.trim(),
+        "Netfang": document.getElementById("bf-email").value.trim(),
+        "Dagsetning": document.getElementById("bf-date").value,
+        "Athugasemd": document.getElementById("bf-msg").value.trim() || "-",
+        "_subject": "Bókunarfyrirspurn: "+document.getElementById("bf-name").value.trim(),
+        "_template": "table",
+        "_honey": bform.querySelector('[name="_honey"]').value
+      };
+
+      fetch("https://formsubmit.co/ajax/"+BOOK_TO,{
+        method:"POST",
+        headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+        body:JSON.stringify(data)
+      })
+      .then(function(r){ if(!r.ok) throw new Error("send-failed"); return r.json(); })
+      .then(function(j){
+        if(j && String(j.success)==="false") throw new Error("send-failed");
+        bform.classList.add("sent");
+        var ok=document.getElementById("bok");
+        if(ok) ok.focus();
+      })
+      .catch(function(){
+        var m=document.getElementById("bmailto");
+        if(m){
+          m.href="mailto:"+BOOK_TO
+            +"?subject="+encodeURIComponent("Bókunarfyrirspurn: "+data["Nafn"])
+            +"&body="+encodeURIComponent("Nafn: "+data["Nafn"]+"\nSímanúmer: "+data["Símanúmer"]+"\nNetfang: "+data["Netfang"]+"\nDagsetning: "+data["Dagsetning"]+"\nAthugasemd: "+data["Athugasemd"]);
+        }
+        fail.classList.add("show");
+      })
+      .finally(function(){
+        btn.classList.remove("loading"); btn.disabled=false;
+      });
+    });
+  }
 
   /* ---------- Reveal on scroll ---------- */
   var reveals=document.querySelectorAll(".reveal");
